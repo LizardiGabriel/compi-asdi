@@ -22,16 +22,16 @@ public class Tablita {
         table[getINT("T1")][getIT(",")] = "T1 -> , T";
         table[getINT("T3")][getIT(",")] = "T3 -> E";
 
-        table[getINT("")][getIT("")] = "";
-        table[getINT("")][getIT("")] = "";
-        table[getINT("")][getIT("")] = "";
-        table[getINT("")][getIT("")] = "";
-        table[getINT("")][getIT("")] = "";
-        table[getINT("")][getIT("")] = "";
-        table[getINT("")][getIT("")] = "";
-        table[getINT("")][getIT("")] = "";
-        table[getINT("")][getIT("")] = "";
-        table[getINT("")][getIT("")] = "";
+        table[getINT("D")][getIT("ID")] = "D -> P";
+        table[getINT("P")][getIT("ID")] = "P -> A";
+        table[getINT("A")][getIT("ID")] = "A -> A2 A1";
+        table[getINT("A2")][getIT("ID")] = "A2 -> id A3";
+        table[getINT("T")][getIT("ID")] = "T -> T2 T1";
+        table[getINT("T2")][getIT("ID")] = "T2 -> id T3";
+        table[getINT("T3")][getIT("ID")] = "T3 -> id";
+        table[getINT("A3")][getIT(".")] = "A3 -> . id";
+        table[getINT("T1")][getIT("$")] = "T1 -> E";
+        table[getINT("T3")][getIT("$")] = "T3 -> E";
 
         // ... continue for all entries
     }
