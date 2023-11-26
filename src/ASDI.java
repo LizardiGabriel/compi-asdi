@@ -14,6 +14,7 @@ public class ASDI implements Parser{
         pilita.push(new Token(TipoToken.EOF, "$"));
         pilita.push(new Token(TipoToken.NoTerminal, "Q"));
         Tablita M = new Tablita();
+        
         //programa de analisis sintactico predictivo
 
         // ip apunta al primersimbolo de w
@@ -30,6 +31,11 @@ public class ASDI implements Parser{
             }else{
                 System.out.println(M.getRule(pilita.peek().getLexema(), preanalisis.getTipo()));
                 pilita.pop();
+                String aux[] = M.getRule(pilita.peek().getLexema(), preanalisis.getTipo()).split(" ");
+                for(int i = aux.length - 1; i >= 0; i--) {
+                    if(aux[i] == "SELECT")
+                        pilita.push(new Token(TipoToken.SELECT, "SELECT"));
+                }
             }
         }
         // X es el simbolo de la parte superior de la pila

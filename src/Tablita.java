@@ -11,27 +11,27 @@ public class Tablita {
         }
 
         // rellenar la tabla
-        table[getINT("Q")][getIT(TipoToken.SELECT)] = "Q -> SELECT D FROM T";
-        table[getINT("A1")][getIT(TipoToken.FROM)] = "A1 -> E";
-        table[getINT("A3")][getIT(TipoToken.FROM)] = "A3 -> E";
-        table[getINT("D")][getIT(TipoToken.DISTINCT)] = "D -> DISTINCT P";
-        table[getINT("D")][getIT(TipoToken.ASTERISCO)] = "D -> P";
-        table[getINT("P")][getIT(TipoToken.ASTERISCO)] = "P -> *";
-        table[getINT("A1")][getIT(TipoToken.COMA)] = "A1 -> , A";
-        table[getINT("A3")][getIT(TipoToken.COMA)] = "A3 -> E";
-        table[getINT("T1")][getIT(TipoToken.COMA)] = "T1 -> , T";
-        table[getINT("T3")][getIT(TipoToken.COMA)] = "T3 -> E";
+        table[getINT("Q")][getIT(TipoToken.SELECT)] = "SELECT D FROM T";
+        table[getINT("A1")][getIT(TipoToken.FROM)] = "E";
+        table[getINT("A3")][getIT(TipoToken.FROM)] = "E";
+        table[getINT("D")][getIT(TipoToken.DISTINCT)] = "DISTINCT P";
+        table[getINT("D")][getIT(TipoToken.ASTERISCO)] = "P";
+        table[getINT("P")][getIT(TipoToken.ASTERISCO)] = "*";
+        table[getINT("A1")][getIT(TipoToken.COMA)] = ", A";
+        table[getINT("A3")][getIT(TipoToken.COMA)] = "E";
+        table[getINT("T1")][getIT(TipoToken.COMA)] = ", T";
+        table[getINT("T3")][getIT(TipoToken.COMA)] = "E";
 
-        table[getINT("D")][getIT(TipoToken.IDENTIFICADOR)] = "D -> P";
-        table[getINT("P")][getIT(TipoToken.IDENTIFICADOR)] = "P -> A";
-        table[getINT("A")][getIT(TipoToken.IDENTIFICADOR)] = "A -> A2 A1";
-        table[getINT("A2")][getIT(TipoToken.IDENTIFICADOR)] = "A2 -> id A3";
-        table[getINT("T")][getIT(TipoToken.IDENTIFICADOR)] = "T -> T2 T1";
-        table[getINT("T2")][getIT(TipoToken.IDENTIFICADOR)] = "T2 -> id T3";
-        table[getINT("T3")][getIT(TipoToken.IDENTIFICADOR)] = "T3 -> id";
-        table[getINT("A3")][getIT(TipoToken.PUNTO)] = "A3 -> . id";
-        table[getINT("T1")][getIT(TipoToken.EOF)] = "T1 -> E";
-        table[getINT("T3")][getIT(TipoToken.EOF)] = "T3 -> E";
+        table[getINT("D")][getIT(TipoToken.IDENTIFICADOR)] = "P";
+        table[getINT("P")][getIT(TipoToken.IDENTIFICADOR)] = "A";
+        table[getINT("A")][getIT(TipoToken.IDENTIFICADOR)] = "A2 A1";
+        table[getINT("A2")][getIT(TipoToken.IDENTIFICADOR)] = "id A3";
+        table[getINT("T")][getIT(TipoToken.IDENTIFICADOR)] = "T2 T1";
+        table[getINT("T2")][getIT(TipoToken.IDENTIFICADOR)] = "id T3";
+        table[getINT("T3")][getIT(TipoToken.IDENTIFICADOR)] = "id";
+        table[getINT("A3")][getIT(TipoToken.PUNTO)] = ". id";
+        table[getINT("T1")][getIT(TipoToken.EOF)] = "E";
+        table[getINT("T3")][getIT(TipoToken.EOF)] = "E";
 
         
     }
