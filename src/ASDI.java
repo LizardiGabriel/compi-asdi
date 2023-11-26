@@ -6,7 +6,6 @@ public class ASDI implements Parser{
     private int i = 0;
     private boolean hayErrores = false;
     private Token preanalisis;
-    private final List<Token> tokens;
 
 
     public ASDI(List<Token> tokens){
@@ -18,7 +17,6 @@ public class ASDI implements Parser{
         //programa de analisis sintactico predictivo
 
         // ip apunta al primersimbolo de w
-        this.tokens = tokens;
         while(pilita.peek().getTipo() != TipoToken.EOF) {
             preanalisis = tokens.get(i);
             //System.out.println(pilita.peek().getTipo());
