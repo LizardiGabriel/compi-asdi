@@ -12,12 +12,18 @@ public class ASDI implements Parser{
     public ASDI(List<Token> tokens){
         Stack<String> pilita = new Stack<String>();
         pilita.push("$");
+        pilita.push("Q");
+        
         //programa de analisis sintactico predictivo
 
         // ip apunta al primersimbolo de w
         this.tokens = tokens;
         preanalisis = this.tokens.get(i);
-
+        while(pilita.peek() != "$") {
+            if (pilita.peek() == preanalisis) {
+                
+            }
+        }
         // X es el simbolo de la parte superior de la pila
         // mientras la pila no este vacía{
         // si X es no terminal, sacar de la pila y avanzar ip
