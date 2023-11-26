@@ -11,16 +11,16 @@ public class Tablita {
         }
 
         // Assign values to the array
-        table[getINT("")][getIT("")] = "";
-        table[getINT("")][getIT("")] = "";
-        table[getINT("")][getIT("")] = "";
-        table[getINT("")][getIT("")] = "";
-        table[getINT("")][getIT("")] = "";
-        table[getINT("")][getIT("")] = "";
-        table[getINT("")][getIT("")] = "";
-        table[getINT("")][getIT("")] = "";
-        table[getINT("")][getIT("")] = "";
-        table[getINT("")][getIT("")] = "";
+        table[getINT("Q")][getIT("SELECT")] = "Q -> SELECT D FROM T";
+        table[getINT("A1")][getIT("FROM")] = "A1 -> E";
+        table[getINT("A3")][getIT("FROM")] = "A3 -> E";
+        table[getINT("D")][getIT("DISTINCT")] = "D -> DISTINCT P";
+        table[getINT("D")][getIT("*")] = "D -> P";
+        table[getINT("P")][getIT("*")] = "P -> *";
+        table[getINT("A1")][getIT(",")] = "A1 -> , A";
+        table[getINT("A3")][getIT(",")] = "A3 -> E";
+        table[getINT("T1")][getIT(",")] = "T1 -> , T";
+        table[getINT("T3")][getIT(",")] = "T3 -> E";
 
         table[getINT("")][getIT("")] = "";
         table[getINT("")][getIT("")] = "";
