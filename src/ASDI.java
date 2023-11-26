@@ -35,6 +35,23 @@ public class ASDI implements Parser{
                 for(int i = aux.length - 1; i >= 0; i--) {
                     if(aux[i] == "SELECT")
                         pilita.push(new Token(TipoToken.SELECT, "SELECT"));
+                    if(aux[i] == "DISTINCT")
+                        pilita.push(new Token(TipoToken.DISTINCT, "DISTINCT"));
+                    if(aux[i] == "FROM")
+                        pilita.push(new Token(TipoToken.FROM, "FROM"));
+                    if(aux[i] == ",")
+                        pilita.push(new Token(TipoToken.COMA, "COMA"));
+                    if(aux[i] == "*")
+                        pilita.push(new Token(TipoToken.ASTERISCO, "ASTERISCO"));
+                    if(aux[i] == ".")
+                        pilita.push(new Token(TipoToken.PUNTO, "PUNTO"));
+                    if(aux[i] == "id")
+                        pilita.push(new Token(TipoToken.IDENTIFICADOR, "IDENTIFICADOR"));
+                    if(aux[i] == "E"){
+                        //no hace nada
+                    }
+                       
+
                 }
             }
         }
