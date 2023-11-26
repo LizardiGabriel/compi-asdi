@@ -2,7 +2,7 @@ public class Tablita {
     private final String[][] table;
 
     public Tablita() {
-        table = new String[11][8]; // Define the size of the array
+        table = new String[11][8]; 
         //rellenar la tabla con --
         for(int i = 0; i < 11; i++){
             for(int j = 0; j < 8; j++){
@@ -10,7 +10,7 @@ public class Tablita {
             }
         }
 
-        // Assign values to the array
+        // rellenar la tabla
         table[getINT("Q")][getIT("SELECT")] = "Q -> SELECT D FROM T";
         table[getINT("A1")][getIT("FROM")] = "A1 -> E";
         table[getINT("A3")][getIT("FROM")] = "A3 -> E";
@@ -33,14 +33,14 @@ public class Tablita {
         table[getINT("T1")][getIT("$")] = "T1 -> E";
         table[getINT("T3")][getIT("$")] = "T3 -> E";
 
-        // ... continue for all entries
+        
     }
 
     public String getRule(String state, String symbol) {
         return table[getINT(state)][getIT(symbol)];
     }
 
-    // These methods convert states and symbols to array indices
+    // convertir el estado a un entero
     private int getINT(String state) {
         int ret = 11;
         if(state == "Q") ret = 0;
