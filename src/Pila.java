@@ -1,23 +1,22 @@
-import java.util.EmptyStackException;
 import java.util.LinkedList;
 
-public class Pila<T> {
-    private LinkedList<T> list = new LinkedList<T>();
+public class Pila<String> {
+    private LinkedList<String> list = new LinkedList<String>();
 
-    public void push(T item) {
+    public void push(String item) {
         list.addFirst(item);
     }
 
-    public T pop() {
+    public String pop() {
         if (list.isEmpty()) {
-            throw new EmptyStackException();
+            System.out.println("Pila vacia");
         }
         return list.removeFirst();
     }
 
-    public T peek() {
+    public String peek() {
         if (list.isEmpty()) {
-            throw new EmptyStackException();
+            System.out.println("Pila vacia");
         }
         return list.getFirst();
     }
