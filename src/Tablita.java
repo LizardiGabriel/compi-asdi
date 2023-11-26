@@ -3,10 +3,36 @@ public class Tablita {
 
     public Tablita() {
         table = new String[11][8]; // Define the size of the array
+        //rellenar la tabla con --
+        for(int i = 0; i < 11; i++){
+            for(int j = 0; j < 8; j++){
+                table[i][j] = "--";
+            }
+        }
 
         // Assign values to the array
-        table[getINT("D")][getIT("*")] = "D>P";
-        table[getINT("D")][getIT("id")] = "D>P";
+        table[getINT("")][getIT("")] = "";
+        table[getINT("")][getIT("")] = "";
+        table[getINT("")][getIT("")] = "";
+        table[getINT("")][getIT("")] = "";
+        table[getINT("")][getIT("")] = "";
+        table[getINT("")][getIT("")] = "";
+        table[getINT("")][getIT("")] = "";
+        table[getINT("")][getIT("")] = "";
+        table[getINT("")][getIT("")] = "";
+        table[getINT("")][getIT("")] = "";
+
+        table[getINT("")][getIT("")] = "";
+        table[getINT("")][getIT("")] = "";
+        table[getINT("")][getIT("")] = "";
+        table[getINT("")][getIT("")] = "";
+        table[getINT("")][getIT("")] = "";
+        table[getINT("")][getIT("")] = "";
+        table[getINT("")][getIT("")] = "";
+        table[getINT("")][getIT("")] = "";
+        table[getINT("")][getIT("")] = "";
+        table[getINT("")][getIT("")] = "";
+
         // ... continue for all entries
     }
 
