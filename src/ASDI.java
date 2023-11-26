@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Stack;
 
 public class ASDI implements Parser{
 
@@ -9,12 +10,14 @@ public class ASDI implements Parser{
 
 
     public ASDI(List<Token> tokens){
-        this.tokens = tokens;
-        preanalisis = this.tokens.get(i);
-
+        Stack<String> pilita = new Stack<String>();
+        pilita.push("$");
         //programa de analisis sintactico predictivo
 
         // ip apunta al primersimbolo de w
+        this.tokens = tokens;
+        preanalisis = this.tokens.get(i);
+
         // X es el simbolo de la parte superior de la pila
         // mientras la pila no este vacía{
         // si X es no terminal, sacar de la pila y avanzar ip
@@ -28,7 +31,7 @@ public class ASDI implements Parser{
         // }
 
 
-        
+
 
 
 
