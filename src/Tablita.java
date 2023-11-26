@@ -11,14 +11,14 @@ public class Tablita {
         }
 
         // rellenar la tabla
-        table[getINT("Q")][getIT("SELECT")] = "Q -> SELECT D FROM T";
-        table[getINT("A1")][getIT("FROM")] = "A1 -> E";
-        table[getINT("A3")][getIT("FROM")] = "A3 -> E";
-        table[getINT("D")][getIT("DISTINCT")] = "D -> DISTINCT P";
-        table[getINT("D")][getIT("*")] = "D -> P";
-        table[getINT("P")][getIT("*")] = "P -> *";
-        table[getINT("A1")][getIT(",")] = "A1 -> , A";
-        table[getINT("A3")][getIT(",")] = "A3 -> E";
+        table[getINT("Q")][getIT(TipoToken.SELECT)] = "Q -> SELECT D FROM T";
+        table[getINT("A1")][getIT(TipoToken.FROM)] = "A1 -> E";
+        table[getINT("A3")][getIT(TipoToken.FROM)] = "A3 -> E";
+        table[getINT("D")][getIT(TipoToken.DISTINCT)] = "D -> DISTINCT P";
+        table[getINT("D")][getIT(TipoToken.ASTERISCO)] = "D -> P";
+        table[getINT("P")][getIT(TipoToken.ASTERISCO)] = "P -> *";
+        table[getINT("A1")][getIT(TipoToken.COMA)] = "A1 -> , A";
+        table[getINT("A3")][getIT(TipoToken.COMA)] = "A3 -> E";
         table[getINT("T1")][getIT(",")] = "T1 -> , T";
         table[getINT("T3")][getIT(",")] = "T3 -> E";
 
@@ -36,7 +36,7 @@ public class Tablita {
         
     }
 
-    public String getRule(String state, String symbol) {
+    public String getRule(String state, TipoToken symbol) {
         return table[getINT(state)][getIT(symbol)];
     }
 
@@ -59,16 +59,16 @@ public class Tablita {
 
     }
 
-    private int getIT(String symbol) {
+    private int getIT(TipoToken symbol) {
         int ret = 0;
-        if(symbol == "SELECT") ret = 0;
-        if(symbol == "FROM") ret = 1;
-        if(symbol == "DISTINCT") ret = 2;
-        if(symbol == "*") ret = 3;
-        if(symbol == ",") ret = 4;
-        if(symbol == "ID") ret = 5;
-        if(symbol == ".") ret = 6;
-        if(symbol == "$") ret = 7;
+        if(symbol == TipoToken.SELECT) ret = 0;
+        if(symbol == TipoToken.FROM) ret = 1;
+        if(symbol == TipoToken.DISTINCT) ret = 2;
+        if(symbol == TipoToken.ASTERISCO) ret = 3;
+        if(symbol == TipoToken.COMA) ret = 4;
+        if(symbol == TipoToken.IDENTIFICADOR) ret = 5;
+        if(symbol == TipoToken.PUNTO) ret = 6;
+        if(symbol == TipoToken.EOF) ret = 7;
 
         return ret;
     }

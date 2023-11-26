@@ -10,18 +10,23 @@ public class ASDI implements Parser{
 
 
     public ASDI(List<Token> tokens){
-        Stack<String> pilita = new Stack<String>();
-        pilita.push("$");
-        pilita.push("Q");
-        
+        Stack<Token> pilita = new Stack<Token>();
+        pilita.push(new Token(TipoToken.EOF, "$"));
+        pilita.push(new Token(TipoToken.NoTerminal, "Q"));
+        Tablita M = new Tablita();
         //programa de analisis sintactico predictivo
 
         // ip apunta al primersimbolo de w
         this.tokens = tokens;
-        preanalisis = this.tokens.get(i);
-        while(pilita.peek() != "$") {
-            if (pilita.peek() == preanalisis) {
-                
+        while(pilita.peek().getTipo() != TipoToken.EOF) {
+            preanalisis = this.tokens.get(i);
+            if (pilita.peek().getTipo() == preanalisis.getTipo()) {
+                pilita.pop();
+                i++;
+            }else if(pilita.peek().getTipo() != TipoToken.NoTerminal) {
+                System.out.println("Error");
+            }else if(M.getRule(pilita.peek().getLexema(), preanalisis.getTipo()) == "--") {
+
             }
         }
         // X es el simbolo de la parte superior de la pila

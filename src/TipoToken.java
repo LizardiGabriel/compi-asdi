@@ -8,5 +8,8 @@ public enum TipoToken {
     COMA, PUNTO, ASTERISCO,
 
     // Final de cadena
-    EOF
+    EOF,
+
+    //No Terminales
+    NoTerminal
 }
