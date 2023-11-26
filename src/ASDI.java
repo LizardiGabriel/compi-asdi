@@ -24,9 +24,12 @@ public class ASDI implements Parser{
                 pilita.pop();
                 i++;
             }else if(pilita.peek().getTipo() != TipoToken.NoTerminal) {
-                System.out.println("Error");
+                System.out.println("Error en sintaxis");
             }else if(M.getRule(pilita.peek().getLexema(), preanalisis.getTipo()) == "--") {
-
+                System.out.println("Error en sintaxis");
+            }else{
+                System.out.println(M.getRule(pilita.peek().getLexema(), preanalisis.getTipo()));
+                pilita.pop();
             }
         }
         // X es el simbolo de la parte superior de la pila
