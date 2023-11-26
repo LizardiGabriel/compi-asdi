@@ -19,19 +19,19 @@ public class Tablita {
         table[getINT("P")][getIT(TipoToken.ASTERISCO)] = "P -> *";
         table[getINT("A1")][getIT(TipoToken.COMA)] = "A1 -> , A";
         table[getINT("A3")][getIT(TipoToken.COMA)] = "A3 -> E";
-        table[getINT("T1")][getIT(",")] = "T1 -> , T";
-        table[getINT("T3")][getIT(",")] = "T3 -> E";
+        table[getINT("T1")][getIT(TipoToken.COMA)] = "T1 -> , T";
+        table[getINT("T3")][getIT(TipoToken.COMA)] = "T3 -> E";
 
-        table[getINT("D")][getIT("ID")] = "D -> P";
-        table[getINT("P")][getIT("ID")] = "P -> A";
-        table[getINT("A")][getIT("ID")] = "A -> A2 A1";
-        table[getINT("A2")][getIT("ID")] = "A2 -> id A3";
-        table[getINT("T")][getIT("ID")] = "T -> T2 T1";
-        table[getINT("T2")][getIT("ID")] = "T2 -> id T3";
-        table[getINT("T3")][getIT("ID")] = "T3 -> id";
-        table[getINT("A3")][getIT(".")] = "A3 -> . id";
-        table[getINT("T1")][getIT("$")] = "T1 -> E";
-        table[getINT("T3")][getIT("$")] = "T3 -> E";
+        table[getINT("D")][getIT(TipoToken.IDENTIFICADOR)] = "D -> P";
+        table[getINT("P")][getIT(TipoToken.IDENTIFICADOR)] = "P -> A";
+        table[getINT("A")][getIT(TipoToken.IDENTIFICADOR)] = "A -> A2 A1";
+        table[getINT("A2")][getIT(TipoToken.IDENTIFICADOR)] = "A2 -> id A3";
+        table[getINT("T")][getIT(TipoToken.IDENTIFICADOR)] = "T -> T2 T1";
+        table[getINT("T2")][getIT(TipoToken.IDENTIFICADOR)] = "T2 -> id T3";
+        table[getINT("T3")][getIT(TipoToken.IDENTIFICADOR)] = "T3 -> id";
+        table[getINT("A3")][getIT(TipoToken.PUNTO)] = "A3 -> . id";
+        table[getINT("T1")][getIT(TipoToken.EOF)] = "T1 -> E";
+        table[getINT("T3")][getIT(TipoToken.EOF)] = "T3 -> E";
 
         
     }
