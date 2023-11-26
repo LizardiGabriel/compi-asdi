@@ -20,39 +20,64 @@ public class ASDI implements Parser{
         // ip apunta al primersimbolo de w
         this.tokens = tokens;
         while(pilita.peek().getTipo() != TipoToken.EOF) {
-            preanalisis = this.tokens.get(i);
+            preanalisis = tokens.get(i);
+            //System.out.println(pilita.peek().getTipo());
+            
+            //System.out.println(preanalisis.getTipo());
             if (pilita.peek().getTipo() == preanalisis.getTipo()) {
                 pilita.pop();
                 i++;
             }else if(pilita.peek().getTipo() != TipoToken.NoTerminal) {
-                System.out.println("Error en sintaxis");
+                hayErrores = true;
+                break;
             }else if(M.getRule(pilita.peek().getLexema(), preanalisis.getTipo()) == "--") {
-                System.out.println("Error en sintaxis");
+                hayErrores = true;
+                break;
             }else{
-                System.out.println(M.getRule(pilita.peek().getLexema(), preanalisis.getTipo()));
-                pilita.pop();
+                //System.out.println("Sust: " + M.getRule(pilita.peek().getLexema(), preanalisis.getTipo()));
                 String aux[] = M.getRule(pilita.peek().getLexema(), preanalisis.getTipo()).split(" ");
-                for(int i = aux.length - 1; i >= 0; i--) {
-                    if(aux[i] == "SELECT")
+                pilita.pop();
+                for(int j = aux.length - 1; j >= 0; j--) {
+                    
+                    if(aux[j].equals("SELECT")){
                         pilita.push(new Token(TipoToken.SELECT, "SELECT"));
-                    if(aux[i] == "DISTINCT")
+                    }if(aux[j].equals("DISTINCT")){
                         pilita.push(new Token(TipoToken.DISTINCT, "DISTINCT"));
-                    if(aux[i] == "FROM")
+                    }if(aux[j].equals("FROM")){
                         pilita.push(new Token(TipoToken.FROM, "FROM"));
-                    if(aux[i] == ",")
-                        pilita.push(new Token(TipoToken.COMA, "COMA"));
-                    if(aux[i] == "*")
-                        pilita.push(new Token(TipoToken.ASTERISCO, "ASTERISCO"));
-                    if(aux[i] == ".")
-                        pilita.push(new Token(TipoToken.PUNTO, "PUNTO"));
-                    if(aux[i] == "id")
+                    }if(aux[j].equals(",")){
+                        pilita.push(new Token(TipoToken.COMA, ","));
+                    }if(aux[j].equals("*")){
+                        pilita.push(new Token(TipoToken.ASTERISCO, "*"));
+                    }if(aux[j].equals(".")){
+                        pilita.push(new Token(TipoToken.PUNTO, "."));
+                    }if(aux[j].equals("id")){
                         pilita.push(new Token(TipoToken.IDENTIFICADOR, "IDENTIFICADOR"));
-                    if(aux[i] == "E"){
-                        //no hace nada
+                    }if(aux[j].equals("D")){
+                        pilita.push(new Token(TipoToken.NoTerminal, "D"));
+                    }if(aux[j].equals("T")){
+                        pilita.push(new Token(TipoToken.NoTerminal, "T"));
+                    }if(aux[j].equals("P")){
+                        pilita.push(new Token(TipoToken.NoTerminal, "P"));
+                    }if(aux[j].equals("A")){
+                        pilita.push(new Token(TipoToken.NoTerminal, "A"));
+                    }if(aux[j].equals("A1")){
+                        pilita.push(new Token(TipoToken.NoTerminal, "A1"));
+                    }if(aux[j].equals("A2")){
+                        pilita.push(new Token(TipoToken.NoTerminal, "A2"));
+                    }if(aux[j].equals("A3")){
+                        pilita.push(new Token(TipoToken.NoTerminal, "A3"));
+                    }if(aux[j].equals("T1")){
+                        pilita.push(new Token(TipoToken.NoTerminal, "T1"));
+                    }if(aux[j].equals("T2")){
+                        pilita.push(new Token(TipoToken.NoTerminal, "T2"));
+                    }if(aux[j].equals("T3")){
+                        pilita.push(new Token(TipoToken.NoTerminal, "T3"));   
                     }
-                       
-
+                    //System.out.println(aux[j]);
+                    
                 }
+                
             }
         }
         // X es el simbolo de la parte superior de la pila
@@ -66,13 +91,7 @@ public class ASDI implements Parser{
         // }
         // establecer X como el simbolo de la parte superior de la pila
         // }
-
-
-
-
-
-
-
+        
     }
 
     @Override
