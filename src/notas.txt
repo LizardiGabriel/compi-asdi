@@ -1,1 +1,42 @@
-hola mundo!
+gramatica
+
+q -> select D from T
+D -> distinct P | P
+P -> * | A
+A -> A2A1
+A1 -> ,A | E
+A2 -> idA3
+A3 -> .id|E
+T -> T2T1
+T1 -> ,T | E
+T2 -> idT3
+T3 -> id|E
+
+
+P(q): { select }			S(q): { $ }
+P(D): { distinct, *, id }	S(D): { from }
+P(P): { *, id }				S(P): { from }
+P(A): { id }				S(A): { from }
+P(A1):{ , , E }				S(A1):{ from }
+P(A2):{ id }				S(A2):{ , , from }
+P(A3):{ . , E }				S(A3):{ , , from }
+P(T): { id }				S(T): { $ }
+P(T1):{ , , E }				S(T1):{ $ }
+P(T2):{ id }				S(T2):{ , , $ }
+P(T3):{ id, E }				S(T3):{ , , $ }
+
+
+
+|       | select 			| from | distinct 	| * |  ,  | id 		| . 	| $ 	|
+|-------|-------------------|------|------------|---|-----|---------|-------|-------|
+| q     |q>select D from T	|      |          	|   |     |    		|   	|   	|
+| D     |        			|      |D>distinct P|D>P|     |D> P  	|   	|   	|
+| P     |        			|      |          	|P>*|     |P> A 	|   	|   	|
+| A     |        			|      |          	|   |     |A> A2A1 	|   	|   	|
+| A1    |        			|A1>E  |          	|   |A1>,A|    		|   	|   	|
+| A2    |        			|      |          	|   |     |A2> idA3 |   	|   	|
+| A3    |        			|A3>E  |          	|   |A3>E | 		|A3> .id|   	|
+| T     |        			|      |          	|   |     |T> T2T1	|   	|   	|
+| T1    |        			|      |          	|   |T1>,T|    		|   	|T1>E	|
+| T2    |        			|      |          	|   |     |T2> idT3	|   	|   	|
+| T3    |        			|      |          	|   |T3> E|T3> id	|   	|T3>E	|
